@@ -1,12 +1,12 @@
 insert into analysis.tmp_rfm_frequency (user_id, frequency)
 with 
 users as (
-	select distinct user_id from production.orders),
+	select distinct user_id from analysis.view_orders),
 count_status as (
 	select  
 		user_id,
 		count(status) count_orders 
-	FROM production.orders
+	FROM analysis.view_orders
 	where status = 4
 	group by 1)
 
