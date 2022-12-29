@@ -15,4 +15,3 @@ user_id int not null primary key,
 recency int,
 frequency int,
 monetary_value int);
-ывао
