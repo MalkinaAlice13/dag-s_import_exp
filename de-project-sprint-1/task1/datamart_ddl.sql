@@ -12,6 +12,6 @@ monetary_value int not null check (monetary_value >= 1 and monetary_value <= 5))
 
 create table analysis.dm_rfm_segments (
 user_id int not null primary key,
-recency int,
-frequency int,
-monetary_value int);
+recency int not null check (monetary_value >= 1 and monetary_value <= 5),
+frequency int not null check (monetary_value >= 1 and monetary_value <= 5),
+monetary_value int not null check (monetary_value >= 1 and monetary_value <= 5));
