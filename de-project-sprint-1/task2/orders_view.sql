@@ -5,13 +5,13 @@ order_dttm as (
     select
         order_id ,
         max(dttm) dttm 
-    from analysis.view_orderstatuslog 
+    from production.orderstatuslog 
     group by 1),
 itog as (
         select od.*, 
         vo.status_id as status
     from order_dttm od
-    left join analysis.view_orderstatuslog vo 
+    left join production.orderstatuslog vo 
     on od.order_id = vo.order_id and od.dttm = vo.dttm),
 old_orders as (
     select 
@@ -22,7 +22,7 @@ old_orders as (
         payment,
         "cost",
         bonus_grant
-    from analysis.view_orders)
+    from production.orders)
 
 select 
     o.*,
