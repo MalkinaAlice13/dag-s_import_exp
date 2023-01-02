@@ -7,7 +7,7 @@ users_and_order_ts as (
 		user_id,
 		max(order_ts) order_ts
 	FROM analysis.view_orders
-	where status = 4
+	where status = 4 and extract(year from order_ts) = 2022
 	group by 1)
 select 
 	u.user_id, 
