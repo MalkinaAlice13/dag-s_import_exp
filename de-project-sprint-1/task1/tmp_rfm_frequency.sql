@@ -7,7 +7,7 @@ count_status as (
 		user_id,
 		count(status) count_orders 
 	FROM analysis.view_orders
-	where status = 4
+	where status = 4 and extract(year from order_ts) = 2022
 	group by 1)
 
 select 
