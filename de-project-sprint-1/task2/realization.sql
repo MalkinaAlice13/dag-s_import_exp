@@ -1,3 +1,0 @@
--- добавьте код сюда
-CREATE OR REPLACE VIEW analysis.Orders AS 
-...
